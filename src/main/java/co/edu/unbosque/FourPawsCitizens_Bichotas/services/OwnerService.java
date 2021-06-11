@@ -24,7 +24,7 @@ public class OwnerService {
         ownerRepository = new OwnerRepositoryImpl(entityManager);
 
         Owner owner = new Owner(ownerPOJO.getUsername(), ownerPOJO.getPassword(), ownerPOJO.getEmail(),
-                ownerPOJO.getPersonId(), ownerPOJO.getName(), ownerPOJO.getAddress(), ownerPOJO.getNeighborhood());
+                 ownerPOJO.getPersonId(), ownerPOJO.getName(), ownerPOJO.getAddress(), ownerPOJO.getNeighborhood());
         Optional<Owner> persistedOwner = ownerRepository.save(owner);
 
         entityManager.close();
@@ -43,5 +43,14 @@ public class OwnerService {
         }
 
     }
+
+    public void modify (Integer ownerId, String addres, String neighborhood){
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager  entityManager = entityManagerFactory.createEntityManager();
+        ownerRepository = new  OwnerRepositoryImpl(entityManager);
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+
 
 }

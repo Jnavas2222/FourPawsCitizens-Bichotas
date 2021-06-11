@@ -1,5 +1,7 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos;
 
+
+
 public class VetPOJO {
 
     private String username;
