@@ -8,6 +8,7 @@ import java.util.Optional;
 public class OfficerRepositoryImpl  implements OfficerRepository{
 
 
+
     private EntityManager entityManager;
 
     public OfficerRepositoryImpl(EntityManager entityManager) {
